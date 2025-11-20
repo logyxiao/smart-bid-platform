@@ -26,15 +26,16 @@ const menuItems = [
 
 const knowledgeSubItems = [
   { title: "基本情况库", url: "/knowledge/basic" },
-  { title: "组织架构与人员", url: "/knowledge/organization" },
-  { title: "生产与设备资源", url: "/knowledge/production" },
-  { title: "财务与信用", url: "/knowledge/finance" },
-  { title: "资质与体系认证", url: "/knowledge/certification" },
-  { title: "承诺与声明", url: "/knowledge/commitment" },
-  { title: "业绩案例", url: "/knowledge/cases" },
-  { title: "售后服务", url: "/knowledge/service" },
-  { title: "荣誉与奖项", url: "/knowledge/honor" },
-  { title: "知识产权", url: "/knowledge/ip" },
+  { title: "人员档案库", url: "/knowledge/personnel" },
+  { title: "设备档案库", url: "/knowledge/equipment" },
+  { title: "财务情况库", url: "/knowledge/finance" },
+  { title: "信用情况库", url: "/knowledge/credit" },
+  { title: "售后历史库", url: "/knowledge/aftersales" },
+  { title: "企业资质库", url: "/knowledge/qualification" },
+  { title: "企业荣誉库", url: "/knowledge/honor" },
+  { title: "知识产权库", url: "/knowledge/ip" },
+  { title: "企业业绩库", url: "/knowledge/performance" },
+  { title: "历史投标库", url: "/knowledge/bidding" },
 ];
 
 export function AppSidebar() {
