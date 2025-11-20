@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useParams, useNavigate } from "react-router-dom";
 import { Layout } from "@/components/Layout";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -35,8 +36,16 @@ type KnowledgeCategory = {
 };
 
 export default function Knowledge() {
-  const [activeCategory, setActiveCategory] = useState("basic");
+  const { category } = useParams<{ category?: string }>();
+  const navigate = useNavigate();
+  const [activeCategory, setActiveCategory] = useState(category || "basic");
   const [searchQuery, setSearchQuery] = useState("");
+
+  useEffect(() => {
+    if (category) {
+      setActiveCategory(category);
+    }
+  }, [category]);
 
   const categories: KnowledgeCategory[] = [
     {
@@ -242,7 +251,10 @@ export default function Knowledge() {
                     key={category.id}
                     variant={activeCategory === category.id ? "secondary" : "ghost"}
                     className="w-full justify-start gap-3 h-auto py-3"
-                    onClick={() => setActiveCategory(category.id)}
+                    onClick={() => {
+                      setActiveCategory(category.id);
+                      navigate(`/knowledge/${category.id}`);
+                    }}
                   >
                     <Icon className="h-5 w-5 shrink-0" />
                     <div className="flex-1 text-left">
